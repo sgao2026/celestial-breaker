@@ -41,7 +41,9 @@ public class SpawnEnemy : MonoBehaviour
         if(enemyTrash.childCount > 10){ return;}
         //Randomizes the postion 
         Vector3 newPosition = GetOrientation();
+
         var enemy = Instantiate(preFab, newPosition, Quaternion.identity);
+
         //Attach to trash 
         enemy.transform.SetParent(enemyTrash);
    

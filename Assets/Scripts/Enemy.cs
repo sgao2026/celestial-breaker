@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -9,7 +10,7 @@ public class Enemy : MonoBehaviour
     //==================================================================================================================
 
     //Movement Controls 
-    public Rigidbody2D rigidbody2D; //The rigidbody that will move the bullet 
+    public new Rigidbody2D rigidbody2D; //The rigidbody that will move the bullet 
     public float minSpeed = 1f;           //Speed at which the bullet moves 
     public float maxSpeed = 4f;           //Speed at which the bullet moves 
 
@@ -61,7 +62,7 @@ public class Enemy : MonoBehaviour
             _gameController.UpdateScore();
             //Destorys the bullet
             Destroy(collision.gameObject);
-            //Destorys the enemy 
+            //Destorys the enemy if health = 0
             Destroy(gameObject);
         }
         // If the enemy touches a bound it gets destored 
